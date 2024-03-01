@@ -1,0 +1,49 @@
+{
+  //#启用默认端点
+  "DefaultEndpoint": true,
+  "DefaultEndpointPort": 1883,
+  "DefaultEndpointBoundIPAddress": "0.0.0.0",
+  //启用SSL加密端点
+  //"EncryptedEndpoint": true,
+  //"EncryptedEndpointPort": 8883,
+  //"EncryptedEndpointBoundIPAddress": "0.0.0.0",
+  //"EncryptionCertificateKeyPem": "./cert/server-key.pem",
+  //"EncryptionCertificateCertPem": "./cert/server-cert.pem",
+  //"EncryptionSslProtocol": "Tls12"
+
+  "TcpKeepAliveTime": 60,
+  "TcpKeepAliveRetryCount": 3,
+  "TcpKeepAliveInterval": 30,
+
+  //启用会话支持
+  "EnableSessions": true,
+  //每个客户端最多消息缓冲数量
+  "MaxPendingMessagesPerClient": 1000000,
+  //最大连接数
+  "MaxConnections": 100000,
+
+  //扩展-Lua脚本路径
+  //空则不启用
+  "LuaFilePath": "./lua/events.lua",
+  //空则不调用
+  "Event_Started": "started",
+  "Event_Stoped": "stoped",
+  "Event_ValidatingConnection": "validatingConnection",
+  "Event_ClientSubscribedTopic": "clientSubscribedTopic",
+  "Event_ClientUnSubscribedTopic": "clientUnSubscribedTopic",
+  "Event_ClientAcknowledgedPublishPacket": "clientPublish",
+  "Event_ClientConnected": "clientConnected",
+  "Event_ClientDisconnected": "clientDisconnected",
+
+  //集群 - 集群之间通过DefaultEndpointPort通讯，使用集群时，必须启用DefaultEndpoint
+  //当前节点
+  "ClusterNode": "192.168.1.50",
+  //集群所有节点
+  "ClusterNodes": [ "192.168.1.50", "192.168.1.51", "192.168.1.52" ],
+  //认证
+  "ClusterUserName": "mqtt-cluster",
+  "ClusterPassword": "x1tk0!iwz"
+}
+
+
+
